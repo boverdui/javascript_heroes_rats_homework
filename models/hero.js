@@ -23,11 +23,11 @@ Hero.prototype.sortTasks = function (sortBy) {
   this.tasks.sort((a, b) => a[sortBy] - b[sortBy]);
 };
 
-Hero.prototype.viewCompletedTasks = function () {
+Hero.prototype.getCompletedTasks = function () {
   return this.tasks.filter((task) => task.completed === true);
 };
 
-Hero.prototype.viewUncompletedTasks = function () {
+Hero.prototype.getUncompletedTasks = function () {
   return this.tasks.filter((task) => task.completed === false);
 };
 

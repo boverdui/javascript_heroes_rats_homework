@@ -6,17 +6,17 @@ const Rat = require('../models/rat.js');
 
 describe('Hero', function() {
 
-  let hero;
-  let food;
-  let task;
-  let rat;
+  let task1, task2, task3;
+  let hero1;
+  let food1, food2;
+  let rat1;
 
   beforeEach(function() {
-    task1 = new Task("Task1", 8, 10, 100);
-    task2 = new Task("Task2", 7, 5, 75);
-    task3 = new Task("Task3", 10, 8, 25);
+    task1 = new Task("Rescue Robin", 8, 10, 100);
+    task2 = new Task("Catch the Joker", 7, 5, 75);
+    task3 = new Task("Save Gotham", 10, 8, 25);
     hero1 = new Hero("Batman", 100, "nachos", [task1, task2, task3]);
-    food1 = new Food("fly sandwiches", 10);
+    food1 = new Food("hamburger", 10);
     food2 = new Food("nachos", 10);
     rat1 = new Rat("Rat1");
   });
@@ -64,13 +64,13 @@ describe('Hero', function() {
   it('should be able to view tasks that are marked as completed', function () {
     task1.markAsCompleted();
     task2.markAsCompleted();
-    assert.deepStrictEqual(hero1.viewCompletedTasks(), [task1, task2]);
+    assert.deepStrictEqual(hero1.getCompletedTasks(), [task1, task2]);
   });
 
   it('should be able to view tasks that are marked as completed', function () {
     task1.markAsCompleted();
     task2.markAsCompleted();
-    assert.deepStrictEqual(hero1.viewUncompletedTasks(), [task3]);
+    assert.deepStrictEqual(hero1.getUncompletedTasks(), [task3]);
   });
 
   it('should lose health when eating poisonous food', function () {

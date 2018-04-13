@@ -1,4 +1,4 @@
-const Food = function(name, replenishmentValue, poisonous) {
+const Food = function(name, replenishmentValue) {
   this.name = name;
   this.replenishmentValue = replenishmentValue;
   this.poisonous = false;

@@ -6,11 +6,11 @@ describe('Task', function() {
   let task1;
 
   beforeEach(function() {
-    task1 = new Task("Task1", 8, 10, 75);
+    task1 = new Task("Rescue Robin", 8, 10, 75);
   });
 
   it('should have a description', function () {
-    assert.strictEqual(task1.description, "Task1");
+    assert.strictEqual(task1.description, "Rescue Robin");
   });
 
   it('should have a difficulty level', function () {
