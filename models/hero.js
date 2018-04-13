@@ -10,7 +10,9 @@ Hero.prototype.talk = function () {
 }
 
 Hero.prototype.eat = function (food) {
-  if (food.name === this.favouriteFood) {
+  if (food.poisonous === true) {
+    this.health -= 50;
+  } else if (food.name === this.favouriteFood) {
     this.health += food.replenishmentValue * 1.5;
   } else {
     this.health += food.replenishmentValue;
