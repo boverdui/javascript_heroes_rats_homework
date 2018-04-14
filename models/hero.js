@@ -27,8 +27,12 @@ Hero.prototype.getCompletedTasks = function () {
   return this.tasks.filter((task) => task.completed === true);
 };
 
-Hero.prototype.getUncompletedTasks = function () {
+Hero.prototype.getIncompleteTasks = function () {
   return this.tasks.filter((task) => task.completed === false);
+};
+
+Hero.prototype.calculateRewardsTotal = function () {
+  return this.getCompletedTasks().reduce((sum, task) => sum + task.reward, 0);
 };
 
 module.exports = Hero;

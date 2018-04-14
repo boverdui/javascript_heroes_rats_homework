@@ -67,16 +67,22 @@ describe('Hero', function() {
     assert.deepStrictEqual(hero1.getCompletedTasks(), [task1, task2]);
   });
 
-  it('should be able to view tasks that are marked as completed', function () {
+  it('should be able to view tasks that are marked as incomplete', function () {
     task1.markAsCompleted();
     task2.markAsCompleted();
-    assert.deepStrictEqual(hero1.getUncompletedTasks(), [task3]);
+    assert.deepStrictEqual(hero1.getIncompleteTasks(), [task3]);
   });
 
   it('should lose health when eating poisonous food', function () {
     rat1.touchFood(food1);
     hero1.eat(food1);
     assert.strictEqual(hero1.health, 50);
+  });
+
+  it('should be able to calculate their rewards total', function () {
+    task1.markAsCompleted();
+    task2.markAsCompleted();
+    assert.strictEqual(hero1.calculateRewardsTotal(), 175);
   });
 
 });
